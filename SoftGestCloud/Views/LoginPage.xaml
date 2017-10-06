@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SoftGestCloud.LoginPage" Title="Login">
+		<Grid IsClippedToBounds="false">
+			<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 10, 20, 20" >
+	    			<Image Source="logocompleto.png" MinimumHeightRequest="10" />
+					<Entry Text="{Binding Username}" Placeholder="Username" />
+					<Entry Text="{Binding Password}" IsPassword="true" Placeholder="Password"/>
+					<Button Margin="0, 20, 0, 0" Text="Accedi" Clicked="OnLoginButtonClicked" BackgroundColor="#003E8A" TextColor="#FFFFFF"/>
+			</StackLayout>
+			<ContentView x:Name="bgLayer" BackgroundColor="#000000" IsVisible="{Binding IsBusy}" Opacity="0.6" />
+	          <Frame x:Name="frameLayer" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand">
+	              <StackLayout>
+	                  <ActivityIndicator x:Name="indicatorLoader" BackgroundColor="Transparent" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand" Color="#FFFFFF" />
+	                  <Label HorizontalTextAlignment="Center" Text="Caricamento dati..." TextColor="#FFFFFF" XAlign="Center" />
+	              </StackLayout>
+	          </Frame>
+		</Grid>
+</ContentPage>

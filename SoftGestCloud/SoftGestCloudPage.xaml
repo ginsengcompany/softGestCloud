@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BackgroundColor="#003E8A" -->
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SoftGestCloud" x:Class="SoftGestCloud.SoftGestCloudPage" MasterBehavior="Popover">
+	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+
+	<MasterDetailPage.Master>
+		<ContentPage Padding="3" BackgroundColor="#32404e" Title="SoftGest" Icon="menu32.png">
+			<ContentPage.Content>				
+				<StackLayout Margin="0,0,0,0">
+					<StackLayout Margin="1, 20, 1, 1">
+						<Image BackgroundColor="#FFFFFF" Source="banner.png" />
+					</StackLayout>
+					<ScrollView>
+						<StackLayout Margin="10,5,10,10">
+								<Button HorizontalOptions="Start" Text="Dashboard" BackgroundColor="Transparent" Clicked="BtnDashboardClick" TextColor="#FFFFFF" Image="dashboard.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start" Text="Clienti &amp; Fornitori" BackgroundColor="Transparent" TextColor="#FFFFFF" Image="clientifornitori.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start"  Text="Prodotti" BackgroundColor="Transparent"  Clicked="BtnProdottiClick" TextColor="#FFFFFF" Image="prodotti.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start"  Text="Documenti" BackgroundColor="Transparent" Clicked="BtnDocumentiClick" TextColor="#FFFFFF" Image="documenti.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start" Text="Registri" BackgroundColor="Transparent" TextColor="#FFFFFF" Image="registri.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start" Text="Statistiche" BackgroundColor="Transparent" TextColor="#FFFFFF" Image="statistiche.png"></Button>
+								<StackLayout HeightRequest="1" BackgroundColor="#DCDCDC" />
+								<Button HorizontalOptions="Start" Text="Configurazione" BackgroundColor="Transparent" Clicked="BtnConfigurazioneClick"  TextColor="#FFFFFF" Image="configurazioni.png"></Button>
+						</StackLayout>
+					</ScrollView>
+				</StackLayout>
+			</ContentPage.Content>
+		</ContentPage>
+	</MasterDetailPage.Master>
+
+	<MasterDetailPage.Detail>
+		<ContentPage Padding="10">
+			<ContentPage.Content>
+				<StackLayout Margin="5,30,5,5">
+					<Label Text="Dettaglio"></Label>
+				</StackLayout>
+			</ContentPage.Content>
+		</ContentPage>
+	</MasterDetailPage.Detail>
+</MasterDetailPage>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SoftGestCloud.ConfigurationPage" Title="Configurazione">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Salva" Activated="OnClick" Order="Primary" Priority="0">
+		</ToolbarItem>
+	</ContentPage.ToolbarItems>
+	<StackLayout Margin="10, 10, 10, 10" >
+		<Label x:Name="txtUsername" Text="toscano" TextColor="Blue" ></Label>
+		<Label Text="Username" ></Label>
+		<Label Text="" />
+		<Label x:Name="txtStato" Text="Not Attivo" TextColor="Red" ></Label>
+		<Label Text="Stato" ></Label>
+		<Label Text="" />
+		<Label x:Name="txtIdDispositivo" Text="" TextColor="Blue" ></Label>
+		<Label Text="ID Dispositivo" ></Label>		
+		<Label Text="" ></Label>
+		<Picker x:Name="cmbAzienda" ></Picker>
+		<Label Text="Azienda" ></Label>		
+		<Label Text="" ></Label>		
+		<Label x:Name="txtAttenzione" Text="Attenzione:" ></Label>
+		<Label x:Name="txtAttenzioneDescrizione" Text="Il dispositivo può essere attivato solo dall'amministratore sul server" ></Label>
+	</StackLayout>
+
+</ContentPage>
