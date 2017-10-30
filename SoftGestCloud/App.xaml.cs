@@ -152,7 +152,10 @@ namespace SoftGestCloud
 				case "attivaDispositivo":
 					App.AttivaDispositivo();
 					break;
-			}
+                case "disattivaDispositivo":
+                    App.DisattivaDispositivo();
+                    break;
+            }
 		}
 
 		private static async void AttivaDispositivo()
@@ -171,6 +174,22 @@ namespace SoftGestCloud
 				}
 			}
 		}
-	}
 
+        private static async void DisattivaDispositivo()
+        {
+            List<Configuration.Configuration> configuartionList = await ConfigurationPresentation.GetConfiguration();
+            if (configuartionList.Count != 0)
+            {
+                Configuration.Configuration configuration = configuartionList[0];
+                configuration.PrimaryKey = configuration.Token;
+                configuration.Attivo = false;
+                App.Configurazione = configuration;
+                int i = await ConfigurationPresentation.Salva(configuration);
+                Console.WriteLine("Riposta al Salvataggio: " + i);
+                if (i != 0)
+                {
+                }
+            }
+        }
+    }
 }

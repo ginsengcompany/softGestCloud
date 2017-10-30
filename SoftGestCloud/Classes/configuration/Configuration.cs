@@ -9,7 +9,6 @@ namespace Configuration
 {
 	public class ConfigurationPresentation
 	{
-
 		public static async Task<List<Configuration>> GetConfiguration()
 		{
 			ConfigurationDelegate instanza = ConfigurationDelegate.Instance;
@@ -129,7 +128,11 @@ namespace Configuration
 			}
 		}
 
-		string data;
+        string logoStruttura;
+
+        public string LogoStruttura { get => logoStruttura; set => logoStruttura = value; }
+
+        string data;
 
 		public string Data
 		{
@@ -145,7 +148,6 @@ namespace Configuration
 		}
 
 		Boolean attivo;
-
 		public Boolean Attivo
 		{
 			get
@@ -159,9 +161,7 @@ namespace Configuration
 			}
 		}
 
-
 		string username;
-
 		public string Username
 		{
 			get
@@ -175,9 +175,7 @@ namespace Configuration
 			}
 		}
 
-
 		string password;
-
 		public string Password
 		{
 			get
@@ -192,7 +190,6 @@ namespace Configuration
 		}
 
 		string clientId;
-
 		public string ClientId
 		{
 			get
@@ -208,7 +205,6 @@ namespace Configuration
 
 
 		string codiceAzienda;
-
 		public string CodiceAzienda
 		{
 			get
@@ -223,7 +219,6 @@ namespace Configuration
 		}
 
 		string primaryKey;
-
 		[Ignore]
 		public string PrimaryKey
 		{
@@ -238,5 +233,13 @@ namespace Configuration
 			}
 		}
 
-	}
+        Boolean mascheraDiLogin;
+        public bool MascheraDiLogin { get => mascheraDiLogin; set => mascheraDiLogin = value; }
+
+        string logoAzienda;
+        public string LogoAzienda { get => logoAzienda; set => logoAzienda = value; }
+
+        string urlServer;
+        public string UrlServer { get => urlServer; set => urlServer = value; }
+    }
 }

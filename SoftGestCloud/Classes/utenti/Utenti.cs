@@ -27,7 +27,7 @@ namespace Utenti
 
 			var client = new HttpClient();
 
-			var response = await client.GetStringAsync("http://localhost:8080/Login/rest/token");
+			var response = await client.GetStringAsync("http://localhost:3000/Login/token");
 			Console.WriteLine("OK Sisto: " + response);
 			//var todoItems = JsonConvert.DeserializeObject<List<TodoItem>>(response);
 			return lista;
@@ -40,7 +40,8 @@ namespace Utenti
 			var parametri = new List<KeyValuePair<string, string>>
 			{
 				new KeyValuePair<string, string>("grant_type", "client_credentials"),
-				new KeyValuePair<string, string>("client_id", dispositivo.Id),
+                new KeyValuePair<string, string>("client_id", username),
+                new KeyValuePair<string, string>("id_dispositivo", dispositivo.Id),
 				new KeyValuePair<string, string>("client_secret", password),
 				new KeyValuePair<string, string>("impronta", dispositivo.Impronta),
 				new KeyValuePair<string, string>("application", dispositivo.ApplicationName),
@@ -58,7 +59,7 @@ namespace Utenti
 			var content = new FormUrlEncodedContent(parametri);
 
 			//var response = client.PostAsync("http://192.168.125.7:8080/AdvaSoftLogin/rest/token", content).Result;
-			var response = client.PostAsync(RestFullConnection.LOGIN_LINK + "rest/token", content).Result;
+			var response = client.PostAsync(RestFullConnection.LOGIN_LINK + "token", content).Result;
 
 			if (response.IsSuccessStatusCode)
 			{
@@ -69,9 +70,6 @@ namespace Utenti
 			{
 				returnValue = await response.Content.ReadAsStringAsync();
 			}
-
-
-
 			return returnValue;
 		}
 	}

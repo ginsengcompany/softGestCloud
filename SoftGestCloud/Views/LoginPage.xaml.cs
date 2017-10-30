@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using SoftGestCloud;
 using Plugin.DeviceInfo;
-
 using Utenti;
 using ViewModels;
 using Xamarin.Forms;
@@ -19,10 +16,8 @@ namespace SoftGestCloud
 		Boolean errorMessage = true;
 		public LoginPage()
 		{
-
 			InitializeComponent();
 			this.BindingContext = new ViewModels.LoginViewModel();
-
 		}
 
 		void OnLoginButtonClicked(object sender, System.EventArgs e)
@@ -56,8 +51,6 @@ namespace SoftGestCloud
 			{
 				DisplayAlert("Attenzione", "Username e/o password non corretti " + lvm.Username, "OK");
 			}*/
-
-
 		}
 
 		private void verificaUtente()
@@ -72,7 +65,6 @@ namespace SoftGestCloud
 					}
 					 //"Username e/o password non corretti"
 				});
-
 			}
 			else
 			{
@@ -91,7 +83,6 @@ namespace SoftGestCloud
 					});
 					//App.Current.MainPage = new SoftGestCloudPage();
 				}
-
 			}
 		}
 
@@ -161,8 +152,6 @@ namespace SoftGestCloud
 			App.Utente = new Utente();
 			App.Utente.Username = lvm.Username;
 			App.Utente.Password = lvm.Password;
-
 		}
 	}
-
 }

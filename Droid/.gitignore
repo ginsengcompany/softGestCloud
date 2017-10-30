@@ -10,10 +10,10 @@
 *.sln.docstates
 
 # Ignore obj and bin folder
-QuizAmoroso/QuizAmoroso/obj/*
-QuizAmoroso/QuizAmoroso/bin/*
-QuizAmoroso/QuizAmoroso.Android/obj/*
-QuizAmoroso/QuizAmoroso.Android/bin/*
+softGestCloud/softGestCloud/obj/*
+softGestCloud/softGestCloud/bin/*
+softGestCloud/softGestCloud.Android/obj/*
+softGestCloud/softGestCloud.Android/bin/*
 
 # ignore Xamarin.Android Resource.Designer.cs files
 **/*.Droid/**/[Rr]esource.[Dd]esigner.cs
