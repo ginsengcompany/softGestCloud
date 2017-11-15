@@ -85,7 +85,7 @@ namespace SoftGestCloud
 				{
 					Device.BeginInvokeOnMainThread(async () =>
 					{
-                        await DisplayAlert("Attenzione", "Utentza non attiva", "OK");
+                        await DisplayAlert("Attenzione", "Dispositivo non attivo", "OK");
 					});
 				}
 				else
@@ -148,7 +148,7 @@ namespace SoftGestCloud
 			}
 			else
 			{
-				if (App.Configurazione.Username == lvm.Username && App.Configurazione.Password == lvm.Password)
+                if (App.Configurazione.Username == lvm.Username && App.Configurazione.Password == lvm.Password)
 				{
 					this.setUtente();
 				}
@@ -157,7 +157,7 @@ namespace SoftGestCloud
 					errorMessage = true;
 					messaggio = "Username e/o password non corretti!";
 				}
-			}
+            }
 		}
 
 		private void setUtente()

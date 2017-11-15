@@ -18,8 +18,8 @@ namespace Utility
 		//public static readonly string LOGIN_LINK = "http://10.10.99.18:8080/AdvaSoftLogin/";//<--ASL
 		//public static readonly string APPLICATION_LINK = "http://10.10.99.18:8080/PubbliGestCloud/";//<--ASL
 
-		public static readonly string LOGIN_LINK = "http://192.168.125.100:3000/";//<--CASA
-		public static readonly string APPLICATION_LINK = "http://192.168.125.100:3000/";//<--CASA		
+		public static readonly string LOGIN_LINK = "http://192.168.125.56:3000/";//<--CASA
+		public static readonly string APPLICATION_LINK = "http://192.168.125.56:3000/";//<--CASA		
 
 		private static HttpClient client;
 
