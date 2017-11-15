@@ -31,27 +31,40 @@ namespace SoftGestCloud
 			this.dispositivo.ApplicationName = App.APPLICATION_NAME;
 			this.dispositivo.Impronta = App.Impronta;
 			string piattaforma = Device.RuntimePlatform;
-			/*Console.WriteLine("Piattaforma: " + piattaforma);
+            /*Console.WriteLine("Piattaforma: " + piattaforma);
 			Console.WriteLine("Id: " + CrossDeviceInfo.Current.Id);
 			Console.WriteLine("Model: " + CrossDeviceInfo.Current.Model);
 			Console.WriteLine("OK Sisto: " + this.Height);*/
-			//string username = txtUsename.Text;
+            //string username = txtUsename.Text;
 
-			Task.Run(async () => await login("", "")).ContinueWith(task =>
-			{
-				lvm.IsBusy = false;
-				this.verificaUtente();
-			});
-
-			/*if ((lvm.Username == "admin") && lvm.Password.Equals("password"))
-			{
-				Application.Current.MainPage = new SoftGestCloudPage();
-			}
-			else
-			{
-				DisplayAlert("Attenzione", "Username e/o password non corretti " + lvm.Username, "OK");
-			}*/
+            Task.Run(async () => await login("", "")).ContinueWith(task =>
+            {
+                lvm.IsBusy = false;
+                if (verificaUtenteAdmin() == true)
+                {
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await Navigation.PushAsync(new ConfigurationPage());
+                    });
+                }
+                else
+                {
+                    this.verificaUtente();
+                }
+            });
 		}
+
+        private bool verificaUtenteAdmin()
+        {
+            if ((lvm.Username == "admin") && lvm.Password.Equals("password"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 		private void verificaUtente()
 		{
@@ -72,7 +85,7 @@ namespace SoftGestCloud
 				{
 					Device.BeginInvokeOnMainThread(async () =>
 					{
-						await Navigation.PushAsync(new ConfigurationPage());
+                        await DisplayAlert("Attenzione", "Utentza non attiva", "OK");
 					});
 				}
 				else
